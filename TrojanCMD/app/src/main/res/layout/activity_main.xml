@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.mm.trojancmd.MainActivity">
+
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation" />
+
+
+    <AbsoluteLayout
+        android:layout_width="384dp"
+        android:layout_height="412dp"
+        android:orientation="vertical"
+        android:scrollbars = "vertical"
+        tools:layout_editor_absoluteX="3dp"
+        tools:layout_editor_absoluteY="35dp">
+
+        <TextView
+            android:id="@+id/message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_x="0dp"
+            android:layout_y="0dp"
+            android:text="Please Click Button to Add C2 Command"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/addInstallCMD"
+            android:layout_width="195dp"
+            android:layout_height="66dp"
+            android:layout_x="0dp"
+            android:layout_y="85dp"
+            android:text="ADD INSTALL COMMAND"
+            tools:layout_editor_absoluteX="10dp"
+            tools:layout_editor_absoluteY="57dp" />
+
+        <Button
+            android:id="@+id/addunInstallCMD"
+            android:layout_width="195dp"
+            android:layout_height="66dp"
+            android:layout_x="189dp"
+            android:layout_y="86dp"
+            android:text="ADD UNINSTALL COMMAND"
+            tools:layout_editor_absoluteX="10dp"
+            tools:layout_editor_absoluteY="140dp" />
+
+        <Button
+            android:id="@+id/start_recording"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_x="0dp"
+            android:layout_y="154dp"
+            android:text="Start Record MIC"
+            tools:layout_editor_absoluteX="10dp"
+            tools:layout_editor_absoluteY="140dp" />
+
+        <Button
+            android:id="@+id/stop_recording"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_x="94dp"
+            android:layout_y="154dp"
+            android:text="Stop Record MIC"
+            tools:layout_editor_absoluteX="10dp"
+            tools:layout_editor_absoluteY="140dp" />
+
+        <Button
+            android:id="@+id/start_screen_recording"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_x="188dp"
+            android:layout_y="155dp"
+            android:text="Start Record Screen"
+            tools:layout_editor_absoluteX="10dp"
+            tools:layout_editor_absoluteY="140dp" />
+
+        <Button
+            android:id="@+id/stop_screen_recording"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_x="281dp"
+            android:layout_y="156dp"
+            android:text="Stop Record Screen"
+            tools:layout_editor_absoluteX="10dp"
+            tools:layout_editor_absoluteY="140dp" />
+
+        <Button
+            android:id="@+id/reset_es"
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:layout_x="0dp"
+            android:layout_y="346dp"
+            android:text="Reset ElasticSearch"
+            tools:layout_editor_absoluteX="10dp"
+            tools:layout_editor_absoluteY="140dp" />
+
+        <EditText
+            android:id="@+id/ipaddr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="111dp"
+            android:layout_y="30dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name"
+            tools:layout_editor_absoluteX="15dp"
+            tools:layout_editor_absoluteY="214dp" />
+
+        <Button
+            android:id="@+id/updateip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="7dp"
+            android:layout_y="29dp"
+            android:text="Remote IP"
+            tools:layout_editor_absoluteX="237dp"
+            tools:layout_editor_absoluteY="232dp" />
+
+    </AbsoluteLayout>
+
+</android.support.constraint.ConstraintLayout>

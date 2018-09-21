@@ -1,0 +1,2 @@
+08-12 22:09:58.078 29232 29232 D PluginMainActivity: [tluo] Main Activity -- IMEI: 352689083210355
+08-12 22:09:58.088 29232 29232 D PluginMainActivity: [tluo] Main Activity -- decrypted content: secret='this is a test'

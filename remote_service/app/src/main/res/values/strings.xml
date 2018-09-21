@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">remote_service</string>
+    <string name="activity_title"> Test </string>
+</resources>

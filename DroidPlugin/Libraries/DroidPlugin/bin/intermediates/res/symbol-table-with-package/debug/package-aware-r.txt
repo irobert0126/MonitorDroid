@@ -1,0 +1,10 @@
+com.morgoo.droidplugin
+int drawable plugin_activity_loading 0x7f090001
+int drawable plugin_activity_loading_bitmap 0x7f090002
+int string service_name_plugin_manager_service 0x7f150001
+int string stub_name_activity 0x7f150002
+int string stub_name_povider 0x7f150003
+int string stub_name_service 0x7f150004
+int style DroidPluginTheme 0x7f160001
+int style DroidPluginThemeDialog 0x7f160002
+int xml monitor_service 0x7f190001

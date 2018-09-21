@@ -1,0 +1,68 @@
+version: '3.1'
+
+services:
+  redis:
+    image: "redis:alpine"
+  db:
+    container_name: mysqldb
+    build: ./database
+    ports:
+      - "3306"
+  es:
+    container_name: myes
+    image: docker.elastic.co/elasticsearch/elasticsearch:5.4.0
+    environment:
+      - http.host=0.0.0.0
+      - transport.host=0.0.0.0
+      - "ES_JAVA_OPTS=-Xms500m -Xmx500m"
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    ports:
+      - 9200
+      - 9300
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 1g
+  kibana:
+    image: docker.elastic.co/kibana/kibana:5.4.0
+    container_name: kibana
+    environment:
+      - SERVER_HOST=0.0.0.0
+    depends_on:
+      - es
+    volumes:
+      - ./es/kibana.yml:/usr/share/kibana/config/kibana.yml
+    ports:
+      - 5601:5601
+    links:
+      - es:myes
+
+  web:
+    build: ./cmd
+    image: apache-flask:latest
+    restart: always
+    depends_on:
+      - db
+
+    links:
+      - es:myes
+      - redis:myredis
+      - db:mydb
+
+    environment:
+      - MYSQL_USER=test
+      - MYSQL_PASSWD=example
+      - MYSQL_DB=plugins
+      - BAIDU_API_KEY=[BAIDU_API_KEY]
+      - BAIDU_SECRET_KEY=[BAIDU_SECRET_KEY]
+      - BAIDU_APP_ID=[BAIDU_APP_ID]
+      - HOST=[WEB_HOST]
+
+    ports:
+      - 443:443
+
+volumes:
+  esdata:
+    driver: local
